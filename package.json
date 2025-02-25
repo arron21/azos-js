@@ -44,11 +44,12 @@
   ],
   "scripts": {
     "pack-local": "npm pack \"./packages/azos/\" --pack-destination=\"./out\" && npm pack \"./packages/azos-ui/\" --pack-destination=\"./out\"",
-    "build": "parcel build \"packages/azos/index.js\"",
-    "test": "node  packages/azos/test/app.mjs -- --filter",
-    "--test-azos": "npm test -workspace=azos",
-    "test-bro": "parcel --no-cache --dist-dir \"./out/www\" \"./packages/azos/test/index.htm\"",
-    "ui": "parcel --no-cache --dist-dir \"./out/www\" \"./packages/azos-ui/test/index.htm\""
+    "build": "npm run build --workspace=azos",
+    "test": "npm run test --workspace=azos && npm run test --workspace=azos-ui",
+    "test-azos": "npm run test --workspace=azos",
+    "test-bro": "npm run test-bro --workspace=azos",
+    "ui": "npm run ui --workspace=azos-ui",
+    "test-ui": "npm run test --workspace=azos-ui"
   },
   "devDependencies": {
     "eslint": "^8.50.0",

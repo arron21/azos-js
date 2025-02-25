@@ -28,8 +28,10 @@
   },
   "exports": { "./*": "./*.js" },
   "scripts": {
+    "build": "parcel build \"index.js\"",
+    "test": "node test/app.mjs -- --filter",
+    "test-bro": "parcel --no-cache --dist-dir \"./out/www\" \"test/index.htm\""
   },
-
   "dependencies":{
   }
 }
